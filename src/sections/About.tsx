@@ -141,7 +141,7 @@ const About: React.FC = () => {
                   fontWeight={600}
                   sx={{ mb: 2 }}
                 >
-                  Software Developer & Problem Solver
+                  Software Developer
                 </Typography>
 
                 <Typography
@@ -149,7 +149,7 @@ const About: React.FC = () => {
                   paragraph
                   sx={{ mb: 3, fontSize: "1.1rem", lineHeight: 1.7 }}
                 >
-                  Hello! I'm Nay Oo Lwin, a passionate software developer with
+                  Hello! I'm Nay Oo Lwin, a passionate software developer and open source contributor with
                   over 4 years of experience building web applications and
                   digital products.
                 </Typography>

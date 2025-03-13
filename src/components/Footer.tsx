@@ -154,14 +154,14 @@ const Footer: React.FC = () => {
           </Grid>
 
           {/* Contact Info */}
-          <Grid item xs={6} sm={3} md={2}>
+          <Grid item xs={6} sm={3} md={4}>
             <Typography variant="subtitle1" fontWeight={600} color="primary.light" sx={{ mb: 2 }}>
               Contact
             </Typography>
             <Box component="ul" sx={{ p: 0, m: 0, listStyle: 'none' }}>
               <Box component="li" sx={{ mb: 1 }}>
                 <Link
-                  href="tel:+15551234567"
+                  href="tel:+66946277650"
                   color="inherit"
                   underline="none"
                   sx={{ 
@@ -190,31 +190,6 @@ const Footer: React.FC = () => {
               <Box component="li" sx={{ opacity: 0.8 }}>
                 Bangkok, Thailand
               </Box>
-            </Box>
-          </Grid>
-
-          {/* Legal Links */}
-          <Grid item xs={6} sm={3} md={2}>
-            <Typography variant="subtitle1" fontWeight={600} color="primary.light" sx={{ mb: 2 }}>
-              Legal
-            </Typography>
-            <Box component="ul" sx={{ p: 0, m: 0, listStyle: 'none' }}>
-              {['Privacy Policy', 'Terms of Service', 'Cookies'].map((item) => (
-                <Box component="li" key={item} sx={{ mb: 1 }}>
-                  <Link
-                    href="#"
-                    color="inherit"
-                    underline="none"
-                    sx={{ 
-                      opacity: 0.8, 
-                      transition: 'opacity 0.2s ease',
-                      '&:hover': { opacity: 1, color: 'primary.main' } 
-                    }}
-                  >
-                    {item}
-                  </Link>
-                </Box>
-              ))}
             </Box>
           </Grid>
         </Grid>

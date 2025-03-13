@@ -33,10 +33,9 @@ const projects = [
     title: 'Mongo Data Sync',
     description: 'This project primarily focuses on mongo data sync from one database to another seamlessly, wriiten in javascript.',
     image: mongochangestream,
-    technologies: [ 'Node.js', 'Express', 'MongoDB', 'Mongo Change Streams', 'Redis', 'Bull.js'],
+    technologies: [ 'Node.js', 'Javascript', 'Express', 'MongoDB', 'Mongo Change Streams', 'Redis', 'Bull.js'],
     category: 'backend',
     githubUrl: 'https://github.com/NayOoLwin5/Mongo-Data-Sync',
-    liveUrl: 'https://github.com/NayOoLwin5/Mongo-Data-Sync',
     details: {
       challenge: 'Concurrency and duplicate data handling.',
       solution: 'Implemented Redis and Bull.js to handle concurrency and duplicate data handling.',
@@ -51,114 +50,87 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, task assignments, and deadline tracking.',
+    title: 'Chat App',
+    description: 'A collaborative chat application with real-time chatting in a group and private chat',
     image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Task+Management+App',
-    technologies: ['React', 'Firebase', 'Material UI', 'Redux'],
-    category: 'frontend',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
+    technologies: ['React', 'Typescript', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Bull.js', 'Redis'],
+    category: 'fullstack',
+    githubUrl: 'https://github.com/NayOoLwin5/chat-app-frontend/tree/main',
     details: {
-      challenge: 'Creating a real-time collaboration system that maintains consistency across multiple users editing the same tasks.',
-      solution: 'Leveraged Firebase Realtime Database with optimistic UI updates and conflict resolution to ensure a smooth collaborative experience.',
+      challenge: 'High Volume of messages and scalability',
+      solution: 'Leveraged Socket.io and Redis for caching and handling high volume of messages and scalability',
       features: [
-        'Drag-and-drop task organization',
-        'Real-time updates and notifications',
-        'Task commenting and attachment uploads',
-        'Team management and permissions',
-        'Calendar integration',
-        'Customizable labels and priorities'
+        'User authentication (local and Google OAuth)',
+        'Real-time messaging',
+        'Group and private chat',
+        'Friend management',
+        'Message encryption',
+        'Redis-based message queue for processing'
       ]
     }
   },
   {
     id: 3,
-    title: 'Health & Fitness Tracker',
-    description: 'A mobile-first application for tracking workouts, nutrition, and health metrics with data visualization.',
+    title: 'Binance Trade Feed',
+    description: 'A FastAPI-based service that provides real-time cryptocurrency trading data from Binance via WebSocket connections',
     image: 'https://placehold.co/800x600/5E35B1/FFFFFF?text=Fitness+Tracker',
-    technologies: ['React Native', 'Express', 'MongoDB', 'Chart.js'],
-    category: 'mobile',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
+    technologies: ['Python', 'FastAPI', 'websocket', 'Binance websocket streaming API'],
+    category: 'backend',
+    githubUrl: 'https://github.com/NayOoLwin5/Binance-Trade-Feed',
     details: {
-      challenge: 'Designing an intuitive data visualization system that would motivate users while providing actionable insights.',
-      solution: 'Created custom chart components with interactive elements that highlighted progress and suggested improvements based on historical data.',
+      challenge: 'Handling real-time data from Binance WebSocket API',
+      solution: 'Created a FastAPI service that subscribes to Binance WebSocket streams and processes incoming data in real-time.',
       features: [
-        'Customizable workout plans',
-        'Nutrition tracking and meal suggestions',
-        'Progress charts and statistics',
-        'Goal setting and achievement tracking',
-        'Social sharing and community features',
-        'Integration with wearable devices'
+        'Real-time cryptocurrency trading data',
+        'WebSocket connections for multiple trading pairs',
+        'Configurable trading pair subscriptions',
+        'Automatic cleanup of stale trade data',
+        'REST API endpoints for trade data access'
       ]
     }
   },
   {
     id: 4,
-    title: 'Weather Dashboard',
-    description: 'A weather forecasting application with interactive maps, location-based services, and severe weather alerts.',
+    title: 'ROS Obstacle Avoidance',
+    description: 'A ROS (Robot Operating System) application for a robot to avoid obstacles in a simulated environment.',
     image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Weather+Dashboard',
-    technologies: ['React', 'TypeScript', 'OpenWeather API', 'Leaflet Maps'],
-    category: 'frontend',
-    githubUrl: 'https://github.com',
+    technologies: ['ROS', 'Python', 'OpenCV', 'Gazebo', 'TensorFlow'],
+    category: 'backend',
+    githubUrl: 'https://github.com/NayOoLwin5/ROS-Obstacle-Avoidance',
     liveUrl: 'https://example.com',
     details: {
-      challenge: 'Optimizing performance while handling large datasets from multiple weather API sources.',
-      solution: 'Implemented efficient data caching strategies and lazy loading to maintain a responsive interface even with complex weather visualization.',
+      challenge: 'Handling real-time data from Binance WebSocket API',
+      solution: 'Created a FastAPI service that subscribes to Binance WebSocket streams and processes incoming data in real-time.',
       features: [
-        'Current conditions and forecasts',
-        'Interactive radar maps',
-        'Location-based weather alerts',
-        'Historical weather data comparison',
-        'Customizable dashboard widgets',
-        'Offline mode with cached data'
+        'Real-time obstacle detection',
+        'Intelligent path planning and navigation',
+        'Simulated environment for comprehensive testing',
+        'Seamless ROS integration for robust control',
+        'Advanced obstacle avoidance with adaptive algorithms',
+        'High-performance real-time data processing',
+        'Enhanced sensor fusion for improved accuracy'
       ]
     }
   },
   {
     id: 5,
-    title: 'Content Management System',
-    description: 'A headless CMS with a React admin interface, API management, and multilingual content support.',
+    title: 'Open Source Contribution',
+    description: 'Contribution to open source projects like robotics and web development',
     image: 'https://placehold.co/800x600/5E35B1/FFFFFF?text=CMS+Platform',
-    technologies: ['React', 'Node.js', 'GraphQL', 'PostgreSQL'],
+    technologies: ['React', 'Node.js', 'GraphQL', 'Typescript', 'Javascript', 'Python', 'ROS'],
     category: 'fullstack',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com/NayOoLwin5',
     details: {
-      challenge: 'Creating a flexible content modeling system that could adapt to various client needs while maintaining performance.',
-      solution: 'Developed a dynamic schema system with GraphQL that allowed for custom content types while optimizing database queries.',
+      challenge: 'Diverse collaborative projects',
+      solution: 'Contributed to open source projects like robotics and web development',
       features: [
-        'Custom content type builder',
-        'Role-based access control',
-        'Version history and content rollback',
-        'Scheduled publishing',
-        'Multilingual content support',
-        'API key management and rate limiting'
+        'Contributed to open source projects like robotics and web development',
+        'Collaborated with developers from around the world',
+        'Learned new technologies and improved coding skills',
+        'Gained experience in team collaboration and project management'
       ]
     }
-  },
-  {
-    id: 6,
-    title: 'Virtual Classroom',
-    description: 'An educational platform with live video lectures, course management, and interactive learning tools.',
-    image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Virtual+Classroom',
-    technologies: ['React', 'WebRTC', 'Socket.io', 'Express', 'MongoDB'],
-    category: 'fullstack',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://example.com',
-    details: {
-      challenge: 'Building a reliable real-time video streaming system that could handle multiple participants with varying internet connections.',
-      solution: 'Implemented adaptive streaming quality with WebRTC and created fallback mechanisms to ensure continuity during connection issues.',
-      features: [
-        'Live video lectures with screen sharing',
-        'Interactive whiteboard',
-        'Real-time chat and Q&A',
-        'Assignment submission and grading',
-        'Course material management',
-        'Attendance tracking and analytics'
-      ]
-    }
-  },
+  }
 ];
 
 const Projects: React.FC = () => {
@@ -305,21 +277,6 @@ const Projects: React.FC = () => {
                 value="all" 
                 sx={{ textTransform: 'none' }}
               />
-              <Tab 
-                label="Frontend" 
-                value="frontend" 
-                sx={{ textTransform: 'none' }}
-              />
-              <Tab 
-                label="Fullstack" 
-                value="fullstack" 
-                sx={{ textTransform: 'none' }}
-              />
-              <Tab 
-                label="Mobile" 
-                value="mobile" 
-                sx={{ textTransform: 'none' }}
-              />
             </Tabs>
           </Box>
 
@@ -358,24 +315,16 @@ const Projects: React.FC = () => {
                       border: `1px solid ${theme.palette.divider}`,
                     }}
                   >
-                    <Box sx={{ position: 'relative', paddingTop: '60%' }}>
-                      <CardMedia
-                        component="img"
-                        image={project.image}
-                        alt={project.title}
-                        sx={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          transition: 'transform 0.5s ease',
-                          '&:hover': {
-                            transform: 'scale(1.05)',
-                          },
-                        }}
-                      />
+                    <Box 
+                      sx={{ 
+                        position: 'relative', 
+                        paddingTop: '60%', 
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflow: 'hidden',
+                      }}
+                    >
                       <Box
                         sx={{
                           position: 'absolute',
@@ -383,19 +332,40 @@ const Projects: React.FC = () => {
                           left: 0,
                           width: '100%',
                           height: '100%',
-                          background: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%)',
+                          background: 
+                            project.id % 3 === 0 
+                              ? 'linear-gradient(135deg, #5E35B1 0%, #3949AB 100%)' 
+                              : project.id % 3 === 1 
+                                ? 'linear-gradient(135deg, #00BCD4 0%, #2196F3 100%)'
+                                : 'linear-gradient(135deg, #7E57C2 0%, #2196F3 100%)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          padding: 3,
+                          transition: 'transform 0.5s ease',
+                          '&:hover': {
+                            transform: 'scale(1.05)',
+                          },
                         }}
-                      />
+                      >
+                        <Typography
+                          variant="h4"
+                          component="div"
+                          sx={{
+                            color: 'white',
+                            fontWeight: 700,
+                            textAlign: 'center',
+                            textShadow: '0 2px 10px rgba(0,0,0,0.3)',
+                            position: 'relative',
+                            zIndex: 2
+                          }}
+                        >
+                          {project.title}
+                        </Typography>
+                      </Box>
                     </Box>
                     <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                      <Typography 
-                        gutterBottom 
-                        variant="h5" 
-                        component="h3" 
-                        fontWeight={600}
-                      >
-                        {project.title}
-                      </Typography>
+  
                       <Typography 
                         variant="body2" 
                         color="text.secondary" 
@@ -460,21 +430,6 @@ const Projects: React.FC = () => {
                           >
                             <GitHubIcon fontSize="small" />
                           </IconButton>
-                          <IconButton 
-                            aria-label="live demo"
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            sx={{ 
-                              transition: 'all 0.3s ease',
-                              '&:hover': { 
-                                backgroundColor: 'rgba(0, 188, 212, 0.1)',
-                                transform: 'scale(1.2)'
-                              }
-                            }}
-                          >
-                            <LaunchIcon fontSize="small" />
-                          </IconButton>
                         </Box>
                       </Box>
                     </CardContent>
@@ -493,7 +448,7 @@ const Projects: React.FC = () => {
             <Button
               variant="contained"
               size="large"
-              href="https://github.com"
+              href="https://github.com/NayOoLwin5"
               target="_blank"
               endIcon={<GitHubIcon />}
               sx={{ 
@@ -529,14 +484,35 @@ const Projects: React.FC = () => {
       >
         {selectedProject && (
           <>
-            <Box sx={{ position: 'relative' }}>
-              <CardMedia
-                component="img"
-                image={selectedProject.image}
-                alt={selectedProject.title}
-                height="300"
-                sx={{ objectPosition: 'center top' }}
-              />
+            <Box 
+              sx={{ 
+                position: 'relative',
+                height: 300,
+                background: 
+                  selectedProject.id % 3 === 0 
+                    ? 'linear-gradient(135deg, #5E35B1 0%, #3949AB 100%)' 
+                    : selectedProject.id % 3 === 1 
+                      ? 'linear-gradient(135deg, #00BCD4 0%, #2196F3 100%)'
+                      : 'linear-gradient(135deg, #7E57C2 0%, #2196F3 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography
+                variant="h2"
+                component="div"
+                sx={{
+                  color: 'white',
+                  fontWeight: 700,
+                  textAlign: 'center',
+                  textShadow: '0 2px 10px rgba(0,0,0,0.3)',
+                  position: 'relative',
+                  zIndex: 2
+                }}
+              >
+                {selectedProject.title}
+              </Typography>
               <IconButton
                 aria-label="close"
                 onClick={handleClose}
@@ -554,14 +530,6 @@ const Projects: React.FC = () => {
                 <CloseIcon />
               </IconButton>
             </Box>
-            <DialogTitle sx={{ 
-              p: 3,
-              pb: 0,
-              fontSize: '1.8rem', 
-              fontWeight: 600 
-            }}>
-              {selectedProject.title}
-            </DialogTitle>
             <DialogContent sx={{ p: 3 }}>
               <Box sx={{ mb: 3 }}>
                 <Typography variant="h6" gutterBottom fontWeight={600}>
@@ -618,15 +586,6 @@ const Projects: React.FC = () => {
                 sx={{ borderRadius: '20px', px: 3 }}
               >
                 Close
-              </Button>
-              <Button 
-                variant="contained" 
-                href={selectedProject.liveUrl}
-                target="_blank"
-                endIcon={<LaunchIcon />}
-                sx={{ borderRadius: '20px', px: 3 }}
-              >
-                View Live
               </Button>
               <Button
                 variant="contained"
