@@ -171,9 +171,7 @@ const Header: React.FC = () => {
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {/* Logo for desktop */}
-              <Typography
-                variant="h6"
-                noWrap
+              <Box
                 component={motion.div}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -181,15 +179,18 @@ const Header: React.FC = () => {
                 sx={{
                   mr: 2,
                   display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.2rem',
-                  color: 'primary.main',
-                  textDecoration: 'none',
+                  alignItems: 'center',
                 }}
               >
-                DEVELOPER
-              </Typography>
+                <img 
+                  src="/logo192.png" 
+                  alt="Logo" 
+                  style={{ 
+                    height: '50px',
+                    width: 'auto'
+                  }} 
+                />
+              </Box>
 
               {/* Mobile menu */}
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -229,9 +230,7 @@ const Header: React.FC = () => {
               </Box>
 
               {/* Logo for mobile */}
-              <Typography
-                variant="h5"
-                noWrap
+              <Box
                 component={motion.div}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -239,15 +238,18 @@ const Header: React.FC = () => {
                   mr: 2,
                   display: { xs: 'flex', md: 'none' },
                   flexGrow: 1,
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.2rem',
-                  color: 'primary.main',
-                  textDecoration: 'none',
+                  alignItems: 'center',
                 }}
               >
-                DEV
-              </Typography>
+                <img 
+                  src="/logo192.png" 
+                  alt="Logo" 
+                  style={{ 
+                    height: '32px',
+                    width: 'auto'
+                  }} 
+                />
+              </Box>
 
               {/* Desktop menu */}
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
