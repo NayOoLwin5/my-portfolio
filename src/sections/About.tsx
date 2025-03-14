@@ -190,10 +190,9 @@ const About: React.FC = () => {
                 {/* Key Facts */}
                 <Grid container spacing={2} sx={{ mt: 3 }}>
                   {[
-                    { number: "5+", label: "Years Experience" },
-                    { number: "50+", label: "Projects Completed" },
-                    { number: "20+", label: "Happy Clients" },
-                    { number: "10+", label: "Open Source Contributions" },
+                    { number: "4+", label: "Years Experience" },
+                    { number: "10+", label: "Projects Completed" },
+                    { number: "20+", label: "Open Source Contributions" },
                   ].map((item, index) => (
                     <Grid item xs={6} sm={3} key={index}>
                       <Paper
