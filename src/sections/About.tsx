@@ -164,10 +164,7 @@ const About: React.FC = () => {
                   significant loads. My expertise includes developing REST,
                   GraphQL APIs and microservices, with a strong focus on
                   creating sustainable, long-lasting, and cost-effective
-                  architectures. Additionally, I have experience in frontend
-                  development, ensuring responsive, user-friendly interfaces
-                  that align seamlessly with backend functionalities.
-                  Additionally, I have extensive experience in frontend
+                  architectures. Additionally, I have extensive experience in frontend
                   development, particularly specializing in React, ensuring
                   responsive, user-friendly interfaces that align seamlessly
                   with backend functionalities.
