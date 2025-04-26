@@ -37,6 +37,7 @@ const Contact: React.FC = () => {
     message: '',
     severity: 'success' as 'success' | 'error',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Animation variants
   const containerVariants = {
@@ -109,29 +110,53 @@ const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (validateForm()) {
-      // Simulate form submission
-      console.log('Form data submitted:', formData);
+      setIsSubmitting(true);
       
-      // Show success message
-      setSnackbar({
-        open: true,
-        message: 'Your message has been sent successfully! I will get back to you soon.',
-        severity: 'success',
-      });
-      
-      // Clear form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
+      try {
+        // Replace this URL with your own unique Formspree form ID
+        const response = await fetch('https://formspree.io/f/xwpopodq', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        if (response.ok) {
+          // Show success message
+          setSnackbar({
+            open: true,
+            message: 'Your message has been sent successfully! I will get back to you soon.',
+            severity: 'success',
+          });
+          
+          // Clear form
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+          });
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        // Show error message
+        setSnackbar({
+          open: true,
+          message: 'There was an error sending your message. Please try again later.',
+          severity: 'error',
+        });
+        console.error('Form submission error:', error);
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
-      // Show error message
+      // Show validation error message
       setSnackbar({
         open: true,
         message: 'Please fix the errors in the form and try again.',
@@ -400,6 +425,7 @@ const Contact: React.FC = () => {
                           error={!!errors.name}
                           helperText={errors.name}
                           variant="outlined"
+                          required
                           sx={{
                             '& .MuiOutlinedInput-root': {
                               borderRadius: '10px',
@@ -478,7 +504,8 @@ const Contact: React.FC = () => {
                             variant="contained"
                             fullWidth
                             size="large"
-                            endIcon={<SendIcon />}
+                            disabled={isSubmitting}
+                            endIcon={isSubmitting ? null : <SendIcon />}
                             sx={{ 
                               py: 1.5, 
                               borderRadius: '10px',
@@ -486,7 +513,7 @@ const Contact: React.FC = () => {
                               boxShadow: '0 6px 20px rgba(94, 53, 177, 0.4)',
                             }}
                           >
-                            Send Message
+                            {isSubmitting ? 'Sending...' : 'Send Message'}
                           </Button>
                         </Box>
                       </Grid>
