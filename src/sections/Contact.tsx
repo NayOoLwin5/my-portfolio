@@ -22,6 +22,18 @@ import {
   Send as SendIcon
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { ReactComponent as UpworkSVG } from '../assets/icons/upwork.svg';
+
+// Upwork Icon Component using the actual SVG file
+const UpworkIcon: React.FC<{ color?: string }> = ({ color = 'currentColor' }) => (
+  <UpworkSVG 
+    style={{ 
+      width: '24px', 
+      height: '24px', 
+      fill: color 
+    }} 
+  />
+);
 
 const Contact: React.FC = () => {
   const theme = useTheme();
@@ -349,6 +361,7 @@ const Contact: React.FC = () => {
                     { icon: <GitHubIcon />, label: 'GitHub', link: 'https://github.com/NayOoLwin5', color: '#333' },
                     { icon: <LinkedInIcon />, label: 'LinkedIn', link: 'https://www.linkedin.com/in/nay-oo-lwin-4b3976199/', color: '#0077B5' },
                     { icon: <YouTubeIcon />, label: 'Youtube', link: 'https://www.youtube.com/channel/UCAHyRo_zoWFP2gSzBGJWyIw', color: '#FF0000' },
+                    { icon: <UpworkIcon />, label: 'Upwork', link: 'https://www.upwork.com/freelancers/~017d50ae9f5045d0b1', color: '#14A800' },
                   ].map((item, index) => (
                     <Box
                       key={index}

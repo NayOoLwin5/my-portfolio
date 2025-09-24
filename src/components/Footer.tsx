@@ -18,6 +18,18 @@ import {
   YouTube as YouTubeIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
+import { ReactComponent as UpworkSVG } from '../assets/icons/upwork.svg';
+
+// Upwork Icon Component using the actual SVG file
+const UpworkIcon: React.FC<{ color?: string }> = ({ color = 'currentColor' }) => (
+  <UpworkSVG 
+    style={{ 
+      width: '24px', 
+      height: '24px', 
+      fill: color 
+    }} 
+  />
+);
 
 const Footer: React.FC = () => {
   const theme = useTheme();
@@ -101,6 +113,7 @@ const Footer: React.FC = () => {
                 { icon: <GitHubIcon />, href: 'https://github.com/NayOoLwin5', label: 'GitHub' },
                 { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/nay-oo-lwin-4b3976199/', label: 'LinkedIn' },
                 { icon: <YouTubeIcon />, href: 'https://www.youtube.com/channel/UCAHyRo_zoWFP2gSzBGJWyIw', label: 'Youtube' },
+                { icon: <UpworkIcon />, href: 'https://www.upwork.com/freelancers/~017d50ae9f5045d0b1', label: 'Upwork' },
                 { icon: <EmailIcon />, href: 'mailto:nayoolwinpersonal@gmail.com', label: 'Email' },
               ].map((item, index) => (
                 <IconButton 
