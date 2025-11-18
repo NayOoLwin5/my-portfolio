@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e10f6960.css",
-    "main.js": "/static/js/main.c48eeb96.js",
+    "main.js": "/static/js/main.2120b735.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
     "static/media/Nay_Oo_Lwin_Resume.pdf": "/static/media/Nay_Oo_Lwin_Resume.023b9ddb327299bf3312.pdf",
     "static/media/Me.jpg": "/static/media/Me.3b5b3cd9e01f2452ddf2.jpg",
@@ -81,11 +81,11 @@
     "static/media/upwork.svg": "/static/media/upwork.d74692cd07df0937b8d24fcad7000b6a.svg",
     "index.html": "/index.html",
     "main.e10f6960.css.map": "/static/css/main.e10f6960.css.map",
-    "main.c48eeb96.js.map": "/static/js/main.c48eeb96.js.map",
+    "main.2120b735.js.map": "/static/js/main.2120b735.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e10f6960.css",
-    "static/js/main.c48eeb96.js"
+    "static/js/main.2120b735.js"
   ]
 }
