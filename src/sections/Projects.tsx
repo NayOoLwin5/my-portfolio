@@ -28,8 +28,28 @@ import mongochangestream from "../assets/images/mongochangestream.png";
 
 // Project data
 const projects = [
-  {
+    {
     id: 1,
+    title: 'AI Waste Management Report System',
+    description: 'A full-stack waste incident reporting platform with offline AI capabilities for automatic waste classification, semantic similarity search, and trend analysis. Built with FastAPI, React, and PostgreSQL, featuring sentence-transformers for real-time duplicate detection and analytics dashboard',
+    image: mongochangestream,
+    technologies: [ 'Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'sentence-transformers (all-MiniLM-L6-v2)', 'NLTK', 'scikit-learn', 'Shadcn', 'Tailwind CSS'],
+    category: 'fullstack',
+    githubUrl: 'https://github.com/NayOoLwin5/waste-management-report-system',
+    details: {
+      challenge: 'Getting AI accomplished in offline environment and duplicate report detection',
+      solution: 'Implemented sentence-transformers (all-MiniLM-L6-v2) for embedding generation and pgvector with HNSW indexing for fast vector similarity search in PostgreSQL to detect duplicate reports in real-time',
+      features: [
+        'Developed an enterprise-grade waste management platform using FastAPI, React, TypeScript, and PostgreSQL with Docker deployment, handling 100+ concurrent users and 100K+ incidents',
+        'Implemented 4 offline AI features using all-MiniLM-L6-v2 (sentence-transformers) and scikit-learn: hybrid waste classification (90% accuracy), semantic similarity detection, keyword extraction, and AI-generated executive summaries—all processing done locally without external API calls',
+        'Built vector similarity search with pgvector extension and HNSW indexing for real-time duplicate detection (<10ms query time) using 384-dimensional embeddings from sentence-transformers model',
+        'Designed modular monolith architecture with structured logging, async operations, and automated database seeding script that generates 150 realistic incidents with full AI processing',
+        'Created interactive analytics dashboard with time-series trends, anomaly detection, location hotspots, and data visualization using TanStack Query and Recharts'
+      ]
+    }
+  },
+  {
+    id: 2,
     title: 'Mongo Data Sync',
     description: 'This project primarily focuses on mongo data sync from one database to another seamlessly, wriiten in javascript.',
     image: mongochangestream,
@@ -49,7 +69,7 @@ const projects = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: 'Chat App',
     description: 'A collaborative chat application with real-time chatting in a group and private chat',
     image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Task+Management+App',
@@ -70,7 +90,7 @@ const projects = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: 'Binance Trade Feed',
     description: 'A FastAPI-based service that provides real-time cryptocurrency trading data from Binance via WebSocket connections',
     image: 'https://placehold.co/800x600/5E35B1/FFFFFF?text=Fitness+Tracker',
@@ -90,7 +110,7 @@ const projects = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: 'ROS Obstacle Avoidance',
     description: 'A ROS (Robot Operating System) application for a robot to avoid obstacles in a simulated environment.',
     image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Weather+Dashboard',
@@ -113,7 +133,7 @@ const projects = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: 'Open Source Contribution',
     description: 'Contribution to open source projects like robotics and web development',
     image: 'https://placehold.co/800x600/5E35B1/FFFFFF?text=CMS+Platform',

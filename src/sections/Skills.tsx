@@ -36,8 +36,9 @@ const skillCategories = [
     icon: <StorageIcon fontSize="large" />,
     color: "#5C6BC0", // Indigo
     skills: [
-      'Express',
+      'Express.js',
       'Nest.js',
+      'Sail.js',
       'FastAPI',
       'Python',
       'Go',
