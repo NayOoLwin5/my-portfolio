@@ -158,7 +158,7 @@ const Hero: React.FC = () => {
                   fontSize: { xs: '1.8rem', sm: '2.5rem', md: '3rem' },
                 }}
               >
-                I build exceptional digital experiences.
+                I build exceptional digital experiences
               </Typography>
 
               <Typography
