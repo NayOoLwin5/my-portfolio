@@ -22,6 +22,7 @@ import {
   Close as CloseIcon,
   YouTube as YouTubeIcon
 } from '@mui/icons-material';
+import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { motion, AnimatePresence } from 'framer-motion';
 import mongochangestream from "../assets/images/mongochangestream.png";
 import postlikepro from '../assets/images/postlikekpro.png';
@@ -30,6 +31,15 @@ import binancetradefeed from '../assets/images/binance.png';
 import chatApp from '../assets/images/chatApp.png';
 import obstacleAvoidance from '../assets/images/obstacle_avoidance.png';
 import openSource from '../assets/images/open_source.png';
+import upwork from '../assets/images/upwork.png';
+
+// Official Upwork "U" logo mark
+const UpworkIcon = (props: SvgIconProps) => (
+  <SvgIcon {...props} viewBox="0 0 24 24">
+    <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
+  </SvgIcon>
+);
+
 // Project data
 const projects = [
     {
@@ -53,8 +63,26 @@ const projects = [
       ]
     }
   },
-    {
+  {
     id: 2,
+    title: 'Seomaximus - AI SEO Content Optimization Tool (Upwork)',
+    description: 'An AI-powered SEO and marketing automation tool built for a client on Upwork. Automates backlink outreach by discovering target blogs, scraping contact emails, and feeding leads into outreach campaigns — plus an AI social post scheduler that generates and publishes branded content via Facebook OAuth.',
+    image: upwork,
+    technologies: [ 'FastAPI', 'Selenium', 'Playwright', 'Jinja2', 'Celery', 'Smartlead', 'Meta Graph API', 'OAuth', 'Google Search API (custom)'],
+    category: 'fullstack',
+    githubUrl: '',
+    upworkUrl: 'https://www.upwork.com/freelancers/~017d50ae9f5045d0b1',
+    details: {
+      challenge: 'Automating the full backlink outreach pipeline end-to-end — from discovering relevant sites and extracting contact emails at scale to scheduling AI-generated social posts and publishing them reliably across platforms.',
+      solution: 'DDD FastAPI backend with a Google Search wrapper + Selenium for lead discovery, Celery for async AI content generation, and Playwright + Meta Graph API for publishing.',
+      features: [
+        'Developed a domain-driven design FastAPI backend that automates backlink outreach: built a Google-search wrapper that discovers blogs and landing pages, scrapes contact emails with Selenium, and feeds validated leads into Smartlead for automated outreach',
+        'Implemented an AI-powered social post scheduler using Celery workers to generate captions, hashtags and image keywords; rendered templated posts (Jinja2) to images with Playwright and published them via Facebook OAuth + Meta Graph API'
+      ]
+    }
+  },
+    {
+    id: 3,
     title: 'AI Waste Management Report System',
     description: 'A full-stack waste incident reporting platform with offline AI capabilities for automatic waste classification, semantic similarity search, and trend analysis. Built with FastAPI, React, and PostgreSQL, featuring sentence-transformers for real-time duplicate detection and analytics dashboard',
     image: wasteManagement,
@@ -74,7 +102,7 @@ const projects = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: 'Mongo Data Sync',
     description: 'This project primarily focuses on mongo data sync from one database to another seamlessly, wriiten in javascript.',
     image: mongochangestream,
@@ -94,7 +122,7 @@ const projects = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: 'Chat App',
     description: 'A collaborative chat application with real-time chatting in a group and private chat',
     image: chatApp,
@@ -119,7 +147,7 @@ const projects = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: 'Binance Trade Feed',
     description: 'A FastAPI-based service that provides real-time cryptocurrency trading data from Binance via WebSocket connections',
     image: binancetradefeed,
@@ -139,13 +167,13 @@ const projects = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: 'ROS Obstacle Avoidance',
     description: 'A ROS (Robot Operating System) application for a robot to avoid obstacles in a simulated environment.',
     image: obstacleAvoidance,
     technologies: ['ROS', 'Python', 'OpenCV', 'Gazebo', 'TensorFlow'],
     category: 'backend',
-    githubUrl: 'https://github.com/NayOoLwin5/ROS-Obstacle-Avoidance',
+    githubUrl: 'https://github.com/TheRoboticsClub/colab-2020-Nay-Oo-Lwin/tree/master/Obstacle-avoidance_on_web-template',
     liveUrl: 'https://example.com',
     details: {
       challenge: 'Handling real-time data from Binance WebSocket API',
@@ -162,7 +190,7 @@ const projects = [
     }
   },
   {
-    id: 7,
+    id: 8,
     title: 'Open Source Contribution',
     description: 'Contribution to open source projects like robotics and web development',
     image: openSource,
@@ -467,6 +495,24 @@ const Projects: React.FC = () => {
                             >
                               <YouTubeIcon fontSize="small" />
                             </IconButton>
+                          ) : (project as any).upworkUrl ? (
+                            <IconButton
+                              aria-label="upwork"
+                              href={(project as any).upworkUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              sx={{
+                                mr: 1,
+                                color: '#14a800',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                  backgroundColor: 'rgba(20, 168, 0, 0.1)',
+                                  transform: 'scale(1.2)',
+                                },
+                              }}
+                            >
+                              <UpworkIcon fontSize="small" />
+                            </IconButton>
                           ) : (
                             getProjectRepos(project).map((repo) => (
                               <IconButton 
@@ -675,6 +721,17 @@ const Projects: React.FC = () => {
                   sx={{ borderRadius: '20px', px: 3, backgroundColor: '#FF0000', '&:hover': { backgroundColor: '#cc0000' } }}
                 >
                   Watch Demo
+                </Button>
+              ) : (selectedProject as any).upworkUrl ? (
+                <Button
+                  variant="contained"
+                  href={(selectedProject as any).upworkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  endIcon={<UpworkIcon />}
+                  sx={{ borderRadius: '20px', px: 3, backgroundColor: '#14a800', '&:hover': { backgroundColor: '#0f7a00' } }}
+                >
+                  View on Upwork
                 </Button>
               ) : (
                 getProjectRepos(selectedProject).map((repo) => (
