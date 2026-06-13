@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Typography, Box, Button, useTheme, Grid } from '@mui/material';
-import { motion, useAnimationControls } from 'framer-motion';
+import React from 'react';
+import { Container, Typography, Box, Button, Grid } from '@mui/material';
+import { motion } from 'framer-motion';
 import { KeyboardArrowDown as KeyboardArrowDownIcon, ArrowForward as ArrowForwardIcon } from '@mui/icons-material';
+import CodeEditor from '../components/CodeEditor';
 
 const Hero: React.FC = () => {
-  const theme = useTheme();
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -29,19 +28,6 @@ const Hero: React.FC = () => {
     },
   };
 
-  const codeBlockVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.7,
-        delay: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
   // Handle scroll to About section
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -61,60 +47,9 @@ const Hero: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Animated background elements */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 0,
-          overflow: 'hidden',
-          pointerEvents: 'none',
-        }}
-      >
-        {/* Animated dots pattern */}
-        {[...Array(45)].map((_, i) => (
-          <Box
-            key={i}
-            component={motion.div}
-            initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight, 
-              opacity: 0.1 + Math.random() * 0.3 
-            }}
-            animate={{ 
-              x: [
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth,
-              ],
-              y: [
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight,
-              ],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{ 
-              duration: 5 + Math.random() * 30,
-              repeat: Infinity,
-              repeatType: "reverse"
-            }}
-            sx={{
-              position: 'absolute',
-              width: 4 + Math.random() * 6,
-              height: 4 + Math.random() * 6,
-              borderRadius: '50%',
-              backgroundColor: 'primary.main',
-              pointerEvents: 'auto',
-            }}
-          />
-        ))}
-      </Box>
-
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={6}>
             <Box
               component={motion.div}
               variants={containerVariants}
@@ -309,85 +244,8 @@ const Hero: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={5} sx={{ display: { xs: 'none', md: 'block' } }}>
-            <Box
-              component={motion.div}
-              variants={codeBlockVariants}
-              initial="hidden"
-              animate="visible"
-              sx={{
-                position: 'relative',
-                borderRadius: '10px',
-                overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
-                backgroundColor: theme.palette.mode === 'light' 
-                  ? 'rgba(30, 30, 30, 0.95)' 
-                  : 'rgba(20, 20, 20, 0.8)',
-                p: 3,
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '30px',
-                  background: 'linear-gradient(90deg, #ff5f57 0%, #ffbd2e 50%, #28ca41 100%)',
-                  backgroundSize: '100px 100%',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: '10px center',
-                  borderTopLeftRadius: '10px',
-                  borderTopRightRadius: '10px',
-                },
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '30px',
-                },
-                mt: 5,
-                pt: 5,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: 'monospace',
-                  color: '#f8f8f2',
-                  whiteSpace: 'pre-wrap',
-                  fontSize: '1rem',
-                  lineHeight: 1.3,
-                }}
-                component={motion.div}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-              >
-                <Box sx={{ color: '#ff79c6' }}>const</Box>{' '}
-                <Box sx={{ color: '#bd93f9' }}>developer</Box> = {'{'}
-                <br />
-                {'  '}<Box sx={{ color: '#8be9fd' }}>name</Box>:{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'Nay Oo Lwin'</Box>,
-                <br />
-                {'  '}<Box sx={{ color: '#8be9fd' }}>skills</Box>: [{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'JavaScript'</Box>,{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'TypeScript'</Box>,{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'Python'</Box>,{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'React'</Box>,{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'Node.js'</Box>,{' '}
-                <br />
-                {'  '}<Box sx={{ color: '#8be9fd' }}>passion</Box>:{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'Building amazing web experiences'</Box>,
-                <br />
-                {'  '}<Box sx={{ color: '#ff79c6' }}>createSolution</Box>() {'{'}
-                <br />
-                {'    '}<Box sx={{ color: '#ff79c6' }}>return</Box>{' '}
-                <Box sx={{ color: '#f1fa8c' }}>'Clean, efficient, scalable code'</Box>;
-                <br />
-                {'  '}{'}'}<br />
-                {'}'};
-              </Typography>
-            </Box>
+          <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
+            <CodeEditor />
           </Grid>
         </Grid>
       </Container>

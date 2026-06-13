@@ -38,7 +38,7 @@ const skillCategories = [
     skills: [
       'Express.js',
       'Nest.js',
-      'Sail.js',
+      'Sails.js',
       'FastAPI',
       'Python',
       'Go',
@@ -61,8 +61,7 @@ const skillCategories = [
       'Cloudflare',
       'CI/CD',
       'Github Actions',
-      'Gitlab CI/CD',
-      'AWS CodePipeline'
+      'Gitlab CI/CD'
     ]
   }
 ];
@@ -72,12 +71,7 @@ const additionalSkillsGroups = [
   {
     category: 'Frameworks & Tools',
     icon: <CodeIcon fontSize="small" />,
-    skills: [ 'NodeJS', 'Redis', 'Memcached', 'Mongodb', 'Express.js', 'Mongodb Change Streams', 'supabase', 'celery', 'prisma', 'OAuth', 'Bull.js', 'Socket.io', 'RabbitMQ', 'apm', 'ELK', 'sentry', 'zerolog', 'Node-RED', 'websocket', 'mqtt']
-  },
-  {
-    category: 'Cloud & Deployment',
-    icon: <CloudIcon fontSize="small" />,
-    skills: ['Vercel', 'Netlify', 'Heroku', 'AWS S3', 'AWS Lambda', 'AWS EC2']
+    skills: [ 'NodeJS', 'Memcached', 'Mongodb', 'Mongodb Change Streams', 'Supabase', 'Celery', 'Prisma', 'OAuth', 'Bull.js', 'Kafka', 'Socket.io', 'RabbitMQ', 'apm', 'ELK', 'sentry', 'zerolog', 'Node-RED', 'websocket', 'mqtt']
   },
   {
     category: 'Testing & Optimization',

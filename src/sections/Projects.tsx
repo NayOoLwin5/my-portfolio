@@ -11,7 +11,6 @@ import {
   Button, 
   IconButton, 
   Dialog, 
-  DialogTitle, 
   DialogContent, 
   DialogActions,
   useTheme,
@@ -20,19 +19,45 @@ import {
 } from '@mui/material';
 import { 
   GitHub as GitHubIcon, 
-  Launch as LaunchIcon,
-  Close as CloseIcon
+  Close as CloseIcon,
+  YouTube as YouTubeIcon
 } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 import mongochangestream from "../assets/images/mongochangestream.png";
-
+import postlikepro from '../assets/images/postlikekpro.png';
+import wasteManagement from '../assets/images/waste_managment.png';
+import binancetradefeed from '../assets/images/binance.png';
+import chatApp from '../assets/images/chatApp.png';
+import obstacleAvoidance from '../assets/images/obstacle_avoidance.png';
+import openSource from '../assets/images/open_source.png';
 // Project data
 const projects = [
     {
     id: 1,
+    title: 'PostLikePro: AI Powered Social Media content and automation SaaS',
+    description: 'A full-stack AI-powered social media content and automation SaaS platform with offline AI capabilities for automatic content generation, semantic similarity search, and trend analysis. Built with NestJS, Next.js, and Supabase (PostgreSQL), featuring Gemini embeddings for real-time duplicate detection and analytics dashboard',
+    image: postlikepro,
+    technologies: [ 'NestJS', 'Next.js', 'TypeScript', 'Supabase', 'RAG', 'Langchain', 'AI', 'Gemini embeddings', 'pgvector', 'Docker', 'Shadcn', 'Tailwind CSS', 'Stripe API', 'Social media API integrations'],
+    category: 'fullstack',
+    githubUrl: '',
+    youtubeUrl: 'https://www.youtube.com/@NayOoLwin',
+    details: {
+      challenge: 'Multi-tenant data isolation, AI context accuracy per brand, and scaling real-time social media event processing without hitting API rate limits.',
+      solution: 'Used Supabase Row Level Security for tenant isolation, RAG with Gemini embeddings for brand-aware AI replies, and Bull queues to throttle and buffer social media webhook events.',
+      features: [
+        'Built a multi-tenant AI social media SaaS with NestJS + Next.js and Supabase covering campaign creation, comment automation, and DM management end-to-end',
+        'Engineered a RAG pipeline using Gemini embeddings, LangChain and pgvector on Supabase for context-aware AI auto-replies with intelligent agent routing in a Smart Inbox',
+        'Implemented AI campaign generation that learns brand voice from past posts, producing on-brand captions, images, and scheduled content calendars via social media APIs',
+        'Built event-driven async architecture with Bull queues, social media webhooks, and Supabase Realtime — zero polling, all live updates pushed in real-time',
+        'Designed a credit-based AI billing system with per-tenant usage tracking, Stripe subscription integration, tier enforcement, and white-label multi-brand support'
+      ]
+    }
+  },
+    {
+    id: 2,
     title: 'AI Waste Management Report System',
     description: 'A full-stack waste incident reporting platform with offline AI capabilities for automatic waste classification, semantic similarity search, and trend analysis. Built with FastAPI, React, and PostgreSQL, featuring sentence-transformers for real-time duplicate detection and analytics dashboard',
-    image: mongochangestream,
+    image: wasteManagement,
     technologies: [ 'Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'sentence-transformers (all-MiniLM-L6-v2)', 'NLTK', 'scikit-learn', 'Shadcn', 'Tailwind CSS'],
     category: 'fullstack',
     githubUrl: 'https://github.com/NayOoLwin5/waste-management-report-system',
@@ -49,7 +74,7 @@ const projects = [
     }
   },
   {
-    id: 2,
+    id: 3,
     title: 'Mongo Data Sync',
     description: 'This project primarily focuses on mongo data sync from one database to another seamlessly, wriiten in javascript.',
     image: mongochangestream,
@@ -69,13 +94,17 @@ const projects = [
     }
   },
   {
-    id: 3,
+    id: 4,
     title: 'Chat App',
     description: 'A collaborative chat application with real-time chatting in a group and private chat',
-    image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Task+Management+App',
+    image: chatApp,
     technologies: ['React', 'Typescript', 'Node.js', 'Express', 'MongoDB', 'Socket.io', 'Bull.js', 'Redis'],
     category: 'fullstack',
     githubUrl: 'https://github.com/NayOoLwin5/chat-app-frontend/tree/main',
+    githubUrls: [
+      { label: 'Frontend', url: 'https://github.com/NayOoLwin5/chat-app-frontend/tree/main' },
+      { label: 'Backend', url: 'https://github.com/NayOoLwin5/chat-app-backend' },
+    ],
     details: {
       challenge: 'High Volume of messages and scalability',
       solution: 'Leveraged Socket.io and Redis for caching and handling high volume of messages and scalability',
@@ -90,10 +119,10 @@ const projects = [
     }
   },
   {
-    id: 4,
+    id: 5,
     title: 'Binance Trade Feed',
     description: 'A FastAPI-based service that provides real-time cryptocurrency trading data from Binance via WebSocket connections',
-    image: 'https://placehold.co/800x600/5E35B1/FFFFFF?text=Fitness+Tracker',
+    image: binancetradefeed,
     technologies: ['Python', 'FastAPI', 'websocket', 'Binance websocket streaming API'],
     category: 'backend',
     githubUrl: 'https://github.com/NayOoLwin5/Binance-Trade-Feed',
@@ -110,10 +139,10 @@ const projects = [
     }
   },
   {
-    id: 5,
+    id: 6,
     title: 'ROS Obstacle Avoidance',
     description: 'A ROS (Robot Operating System) application for a robot to avoid obstacles in a simulated environment.',
-    image: 'https://placehold.co/800x600/00BCD4/FFFFFF?text=Weather+Dashboard',
+    image: obstacleAvoidance,
     technologies: ['ROS', 'Python', 'OpenCV', 'Gazebo', 'TensorFlow'],
     category: 'backend',
     githubUrl: 'https://github.com/NayOoLwin5/ROS-Obstacle-Avoidance',
@@ -133,10 +162,10 @@ const projects = [
     }
   },
   {
-    id: 6,
+    id: 7,
     title: 'Open Source Contribution',
     description: 'Contribution to open source projects like robotics and web development',
-    image: 'https://placehold.co/800x600/5E35B1/FFFFFF?text=CMS+Platform',
+    image: openSource,
     technologies: ['React', 'Node.js', 'GraphQL', 'Typescript', 'Javascript', 'Python', 'ROS'],
     category: 'fullstack',
     githubUrl: 'https://github.com/NayOoLwin5',
@@ -203,6 +232,12 @@ const Projects: React.FC = () => {
     setOpen(false);
   };
 
+  const getProjectRepos = (project: typeof projects[0]) => {
+    const githubUrls = (project as any).githubUrls as { label: string; url: string }[] | undefined;
+    if (githubUrls?.length) return githubUrls;
+    return project.githubUrl ? [{ label: 'Code', url: project.githubUrl }] : [];
+  };
+
   return (
     <Box
       id="projects"
@@ -233,7 +268,7 @@ const Projects: React.FC = () => {
               textAlign: 'center',
             }}
           >
-            MY WORK
+            SIDE PROJECTS
           </Typography>
 
           <Typography
@@ -247,7 +282,7 @@ const Projects: React.FC = () => {
               fontSize: { xs: '2rem', md: '2.5rem' },
             }}
           >
-            Recent Projects
+            Things I've Built
           </Typography>
 
           <Typography
@@ -335,61 +370,40 @@ const Projects: React.FC = () => {
                       border: `1px solid ${theme.palette.divider}`,
                     }}
                   >
-                    <Box 
-                      sx={{ 
-                        position: 'relative', 
-                        paddingTop: '60%', 
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        overflow: 'hidden',
-                      }}
-                    >
+                    <Box sx={{ position: 'relative', overflow: 'hidden', height: 200 }}>
+                      <CardMedia
+                        component="img"
+                        image={project.image}
+                        alt={project.title}
+                        sx={{
+                          height: 200,
+                          objectFit: 'cover',
+                          transition: 'transform 0.5s ease',
+                          '&:hover': { transform: 'scale(1.05)' },
+                        }}
+                      />
+                      {/* Bottom gradient for readability */}
                       <Box
                         sx={{
                           position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '100%',
-                          height: '100%',
-                          background: 
-                            project.id % 3 === 0 
-                              ? 'linear-gradient(135deg, #5E35B1 0%, #3949AB 100%)' 
-                              : project.id % 3 === 1 
-                                ? 'linear-gradient(135deg, #00BCD4 0%, #2196F3 100%)'
-                                : 'linear-gradient(135deg, #7E57C2 0%, #2196F3 100%)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          padding: 3,
-                          transition: 'transform 0.5s ease',
-                          '&:hover': {
-                            transform: 'scale(1.05)',
-                          },
+                          inset: 0,
+                          background: 'linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%)',
+                          pointerEvents: 'none',
                         }}
-                      >
-                        <Typography
-                          variant="h4"
-                          component="div"
-                          sx={{
-                            color: 'white',
-                            fontWeight: 700,
-                            textAlign: 'center',
-                            textShadow: '0 2px 10px rgba(0,0,0,0.3)',
-                            position: 'relative',
-                            zIndex: 2
-                          }}
-                        >
-                          {project.title}
-                        </Typography>
-                      </Box>
+                      />
                     </Box>
-                    <CardContent sx={{ flexGrow: 1, p: 3 }}>
-  
+                    <CardContent sx={{ flexGrow: 1, p: 3, display: 'flex', flexDirection: 'column' }}>
                       <Typography 
                         variant="body2" 
                         color="text.secondary" 
-                        sx={{ mb: 2, minHeight: '3rem' }}
+                        sx={{
+                          mb: 2,
+                          display: '-webkit-box',
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                          minHeight: '3.9em', // 3 lines × 1.3 line-height
+                        }}
                       >
                         {project.description}
                       </Typography>
@@ -419,7 +433,8 @@ const Projects: React.FC = () => {
                           />
                         )}
                       </Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      {/* mt: 'auto' pushes this row to the bottom of every card */}
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 'auto' }}>
                         <Box
                           component={motion.div}
                           whileHover={{ scale: 1.05 }}
@@ -434,22 +449,46 @@ const Projects: React.FC = () => {
                           </Button>
                         </Box>
                         <Box>
-                          <IconButton 
-                            aria-label="github"
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            sx={{ 
-                              mr: 1,
-                              transition: 'all 0.3s ease',
-                              '&:hover': { 
-                                backgroundColor: 'rgba(94, 53, 177, 0.1)',
-                                transform: 'scale(1.2)'
-                              }
-                            }}
-                          >
-                            <GitHubIcon fontSize="small" />
-                          </IconButton>
+                          {(project as any).youtubeUrl ? (
+                            <IconButton
+                              aria-label="youtube"
+                              href={(project as any).youtubeUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              sx={{
+                                mr: 1,
+                                color: '#FF0000',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                  backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                                  transform: 'scale(1.2)',
+                                },
+                              }}
+                            >
+                              <YouTubeIcon fontSize="small" />
+                            </IconButton>
+                          ) : (
+                            getProjectRepos(project).map((repo) => (
+                              <IconButton 
+                                key={repo.url}
+                                aria-label={`${repo.label} GitHub repository`}
+                                title={`${repo.label} repo`}
+                                href={repo.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                sx={{ 
+                                  mr: 1,
+                                  transition: 'all 0.3s ease',
+                                  '&:hover': { 
+                                    backgroundColor: 'rgba(94, 53, 177, 0.1)',
+                                    transform: 'scale(1.2)'
+                                  }
+                                }}
+                              >
+                                <GitHubIcon fontSize="small" />
+                              </IconButton>
+                            ))
+                          )}
                         </Box>
                       </Box>
                     </CardContent>
@@ -504,31 +543,49 @@ const Projects: React.FC = () => {
       >
         {selectedProject && (
           <>
-            <Box 
-              sx={{ 
+            <Box
+              sx={{
                 position: 'relative',
-                height: 300,
-                background: 
-                  selectedProject.id % 3 === 0 
-                    ? 'linear-gradient(135deg, #5E35B1 0%, #3949AB 100%)' 
-                    : selectedProject.id % 3 === 1 
-                      ? 'linear-gradient(135deg, #00BCD4 0%, #2196F3 100%)'
-                      : 'linear-gradient(135deg, #7E57C2 0%, #2196F3 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                width: '100%',
+                aspectRatio: '16 / 9',
+                overflow: 'hidden',
+                backgroundColor: theme.palette.mode === 'light' ? '#f5f5f7' : '#0e0e12',
               }}
             >
+              <Box
+                component="img"
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  display: 'block',
+                }}
+              />
+              {/* Bottom gradient for title legibility */}
+              <Box
+                sx={{
+                  position: 'absolute',
+                  inset: 0,
+                  background:
+                    'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 40%, transparent 70%)',
+                  pointerEvents: 'none',
+                }}
+              />
               <Typography
-                variant="h2"
+                variant="h4"
                 component="div"
                 sx={{
+                  position: 'absolute',
+                  bottom: 20,
+                  left: 24,
+                  right: 64,
                   color: 'white',
                   fontWeight: 700,
-                  textAlign: 'center',
-                  textShadow: '0 2px 10px rgba(0,0,0,0.3)',
-                  position: 'relative',
-                  zIndex: 2
+                  textShadow: '0 2px 8px rgba(0,0,0,0.7)',
+                  zIndex: 2,
                 }}
               >
                 {selectedProject.title}
@@ -542,6 +599,7 @@ const Projects: React.FC = () => {
                   right: 16,
                   backgroundColor: 'rgba(0, 0, 0, 0.5)',
                   color: 'white',
+                  zIndex: 3,
                   '&:hover': {
                     backgroundColor: 'rgba(0, 0, 0, 0.7)',
                   },
@@ -607,16 +665,33 @@ const Projects: React.FC = () => {
               >
                 Close
               </Button>
-              <Button
-                variant="contained"
-                href={selectedProject.githubUrl}
-                target="_blank"
-                color="secondary"
-                endIcon={<GitHubIcon />}
-                sx={{ borderRadius: '20px', px: 3 }}
-              >
-                View Code
-              </Button>
+              {(selectedProject as any).youtubeUrl ? (
+                <Button
+                  variant="contained"
+                  href={(selectedProject as any).youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  endIcon={<YouTubeIcon />}
+                  sx={{ borderRadius: '20px', px: 3, backgroundColor: '#FF0000', '&:hover': { backgroundColor: '#cc0000' } }}
+                >
+                  Watch Demo
+                </Button>
+              ) : (
+                getProjectRepos(selectedProject).map((repo) => (
+                  <Button
+                    key={repo.url}
+                    variant="contained"
+                    href={repo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="secondary"
+                    endIcon={<GitHubIcon />}
+                    sx={{ borderRadius: '20px', px: 3 }}
+                  >
+                    {repo.label === 'Code' ? 'View Code' : `${repo.label} Repo`}
+                  </Button>
+                ))
+              )}
             </DialogActions>
           </>
         )}
