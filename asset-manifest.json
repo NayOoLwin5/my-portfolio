@@ -1,11 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.e10f6960.css",
-    "main.js": "/static/js/main.f7ad1c9f.js",
+    "main.js": "/static/js/main.c5f42a5f.js",
     "static/js/453.ace21015.chunk.js": "/static/js/453.ace21015.chunk.js",
+    "static/media/binance.png": "/static/media/binance.b7dbb74471723a9593fd.png",
+    "static/media/postlikekpro.png": "/static/media/postlikekpro.640b4d6e259b659b59ba.png",
+    "static/media/mongochangestream.png": "/static/media/mongochangestream.a2b4875de02742edec3c.png",
+    "static/media/open_source.png": "/static/media/open_source.ea47b25fafdb428019ee.png",
+    "static/media/obstacle_avoidance.png": "/static/media/obstacle_avoidance.1be7a461c2d4ae2b282e.png",
+    "static/media/waste_managment.png": "/static/media/waste_managment.705be3abc57474ee9e8b.png",
+    "static/media/chatApp.png": "/static/media/chatApp.7974e47c9fc2e287e4cf.png",
     "static/media/Nay_Oo_Lwin_Resume.pdf": "/static/media/Nay_Oo_Lwin_Resume.023b9ddb327299bf3312.pdf",
     "static/media/Me.jpg": "/static/media/Me.3b5b3cd9e01f2452ddf2.jpg",
-    "static/media/mongochangestream.png": "/static/media/mongochangestream.e79208ca9240c86eba85.png",
     "static/media/roboto-latin-700-normal.woff2": "/static/media/roboto-latin-700-normal.c4d6cab43bec89049809.woff2",
     "static/media/roboto-latin-500-normal.woff2": "/static/media/roboto-latin-500-normal.599f66a60bdf974e578e.woff2",
     "static/media/roboto-latin-300-normal.woff2": "/static/media/roboto-latin-300-normal.db56943a88e4852343ae.woff2",
@@ -81,11 +87,11 @@
     "static/media/upwork.svg": "/static/media/upwork.d74692cd07df0937b8d24fcad7000b6a.svg",
     "index.html": "/index.html",
     "main.e10f6960.css.map": "/static/css/main.e10f6960.css.map",
-    "main.f7ad1c9f.js.map": "/static/js/main.f7ad1c9f.js.map",
+    "main.c5f42a5f.js.map": "/static/js/main.c5f42a5f.js.map",
     "453.ace21015.chunk.js.map": "/static/js/453.ace21015.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e10f6960.css",
-    "static/js/main.f7ad1c9f.js"
+    "static/js/main.c5f42a5f.js"
   ]
 }
